@@ -1,0 +1,79 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/home">Home</a>
+            <!--<a class="navbar-text" href="/user/dashboard">Go to my Dashboard</a>-->
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a (click)="logout()"><i class="fa fa-fw fa-power-off"></i> Log Out</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron hero-spacer cover">
+        <h1>Welcome back, {{username}}!</h1>
+        <p>This a website provides local listings and posts for furniture, </p>
+        <p>textbooks, for sale, personals, services, </p>
+        <p>and etc.. for NEU students!</p>
+        <p><a href="/user/dashboard" class="btn btn-primary btn-large">Go to my Dashbaord!</a>
+        </p>
+    </header>
+
+    <hr>
+
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Latest Item Listings</h3>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Page Features -->
+    <div class="row">
+        <div *ngFor="let item of items">
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <img [src]="item?.url">
+                    <div class="caption">
+                        <h3 class="pull-right">$ {{item?.price}}</h3>
+                        <h3><a href="/user/item/{{item?._id}}/detail">{{item?.title}}</a>
+                        </h3>
+                        <!--<p class="text-bold">{{item.name}}</p>-->
+                        <p>{{item?.description}}</p>
+                        <a href="/user/item/{{item?._id}}/detail" class="btn btn-primary">View Details
+                            <span class="fa fa-caret-right fa-fw"></span>
+                        </a>
+                    </div>
+                    <div class="icons">
+                        <span class="fa fa-user user"></span> {{item._seller?.username}}
+                        <span class=" watcher"><i class="fa fa-heart"></i> {{item?.watcher_count}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; My Website 2018</p>
+            </div>
+        </div>
+    </footer>
+
+</div>

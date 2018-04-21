@@ -1,0 +1,128 @@
+<div class="background">
+    <div class="container">
+        <div class="panel pricing-table-1">
+
+            <form class="form-signin" (ngSubmit)="register()" #f="ngForm">
+                <div *ngIf="errorFlag"
+                     class="alert alert-danger">
+                    {{errorMsg}}
+                </div>
+
+                <h2 id="header-center">Register as a Buyer
+                    <small>(required</small>
+                    <small class="req">*</small>
+                    <small>)</small>
+                </h2>
+                <div class="form-group">
+                    <label><span class="req">* </span> Username: </label>
+                    <input
+                            placeholder="username"
+                            name="username"
+                            type="text"
+                            class="form-control"
+                            ngModel
+                            required
+                            #username="ngModel"/>
+                    <span class="help-block" *ngIf="!username.valid && username.touched">
+      Please enter username!
+   </span>
+
+
+                    <label><span class="req">* </span> Password: </label>
+                    <input placeholder="password"
+                           name="password"
+                           type="password"
+                           class="form-control"
+                           ngModel
+                           required
+                           #password="ngModel"/>
+                    <span class="help-block" *ngIf="!password.valid && password.touched">
+      Please enter password!
+   </span>
+
+                    <label><span class="req">* </span> Verify password: </label>
+                    <input placeholder="verify password"
+                           name="vfpassword"
+                           type="password"
+                           class="form-control"
+                           ngModel
+                           required
+                           #vfpassword="ngModel"/>
+                    <span class="help-block" *ngIf="vfpassword.value != password.value">
+      Passwords do not match!
+   </span>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <label> First Name: </label>
+                            <input placeholder="first name"
+                                   name="firstName"
+                                   type="text"
+                                   class="form-control"
+                                   ngModel
+                                   #firstName="ngModel"/>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <label> Last Name: </label>
+                            <input placeholder="last name"
+                                   name="lastName"
+                                   type="text"
+                                   class="form-control"
+                                   ngModel
+                                   #lastName="ngModel"/>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <label><span class="req">* </span> Email: </label>
+                            <input placeholder="email"
+                                   name="email"
+                                   type="email"
+                                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                                   class="form-control"
+                                   ngModel
+                                   required
+                                   #email="ngModel"/>
+                            <span class="help-block" *ngIf="!email.valid  && email.touched">
+      Please enter email in valid format, eg user@user.domain !
+   </span>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <label> Phone: </label>
+                            <input placeholder="phone"
+                                   name="phone"
+                                   type="text"
+                                   class="form-control"
+                                   ngModel
+                                   #phone="ngModel"/>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <br>
+
+                <button class="btn btn-lg btn-primary btn-block"
+                        type="submit"
+                        [disabled]="!f.valid">Register
+                </button>
+                <button class="btn btn-lg btn-danger btn-block"
+                        type="button"
+                        routerLink="/">Cancel
+                </button>
+                <br>
+
+            </form>
+        </div>
+    </div>
+</div>

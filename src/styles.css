@@ -1,50 +1,50 @@
 body {
-  padding-top: 72px;
-  padding-bottom: 72px;
+    padding-top: 72px;
+    padding-bottom: 72px;
 }
 
 .form-control {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 .white-icon {
-  color: white;
+    color: white;
 }
 
 .list-item-border {
-  border: 0;
+    border: 0;
 }
 
 .vertical-divider {
-  border-right: 1px solid #808080;
+    border-right: 1px solid #808080;
 }
 
 .widget-icon {
-  background-color: white;
+    background-color: white;
 }
 
 .position-absolute-right {
-  position: absolute;
-  right: 0;
+    position: absolute;
+    right: 0;
 }
 
 .position-relative {
-  position: relative;
+    position: relative;
 }
 
 .position-right {
-  right: 0;
+    right: 0;
 }
 
 .image {
-  display: inline-block;
+    display: inline-block;
 }
 
 .youtube {
-  display: inline;
-  position: relative;
+    display: inline;
+    position: relative;
 }
 
 .youtube-buttons {
-  top: -1px;
+    top: -1px;
 }

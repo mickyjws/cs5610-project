@@ -1,0 +1,108 @@
+<h2 id="header-center">Profile
+    <small>(required</small>
+    <small class="req">*</small>
+    <small>)</small>
+</h2>
+<div class="form-group">
+    <label> Account type: </label>
+    <input disabled
+           name="type"
+           type="text"
+           class="form-control"
+           ngModel
+           required
+           [(ngModel)]="user.type"
+           #type="ngModel"/>
+
+
+    <label><span class="req">* </span> Username: </label>
+    <input
+            placeholder="username"
+            name="username"
+            type="text"
+            class="form-control"
+            ngModel
+            required
+            [(ngModel)]="user.username"
+            #username="ngModel"/>
+    <span class="help-block" *ngIf="!username.valid && username.touched">
+      Please enter username!
+   </span>
+
+
+    <label><span class="req">* </span> Password: </label>
+    <input placeholder="password"
+           name="password"
+           type="password"
+           class="form-control"
+           ngModel
+           required
+           [(ngModel)]="user.password"
+           #password="ngModel"/>
+    <span class="help-block" *ngIf="!password.valid && password.touched">
+      Please enter password!
+   </span>
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <label> First Name: </label>
+            <input placeholder="first name"
+                   name="firstName"
+                   type="text"
+                   class="form-control"
+                   ngModel
+                   [(ngModel)]="user.firstName"
+                   #firstName="ngModel"/>
+
+        </div>
+
+        <div class="col-md-6">
+            <label> Last Name: </label>
+            <input placeholder="last name"
+                   name="lastName"
+                   type="text"
+                   class="form-control"
+                   ngModel
+                   [(ngModel)]="user.lastName"
+                   #lastName="ngModel"/>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <label><span class="req">* </span> Email: </label>
+            <input placeholder="email"
+                   name="email"
+                   type="email"
+                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                   class="form-control"
+                   ngModel
+                   required
+                   [(ngModel)]="user.email"
+                   #email="ngModel"/>
+            <span class="help-block" *ngIf="!email.valid  && email.touched">
+      Please enter email in valid format, eg user@user.domain !
+   </span>
+        </div>
+
+        <div class="col-md-6">
+            <label> Phone: </label>
+            <input placeholder="phone"
+                   name="phone"
+                   type="text"
+                   class="form-control"
+                   ngModel
+                   [(ngModel)]="user.phone"
+                   #phone="ngModel"/>
+
+        </div>
+
+    </div>
+
+</div>
+<br>

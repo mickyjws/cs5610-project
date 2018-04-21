@@ -1,52 +1,37 @@
-<div class="container">
-  <h1>Register</h1>
+<div class="background">
+    <div class="container">
+        <div class="panel pricing-table">
 
-  <div *ngIf="errorFlag"
-       class="alert alert-danger">
-    {{errorMsg}}
-  </div>
+            <div class="pricing-plan">
+                <img src="https://s22.postimg.cc/8mv5gn7w1/paper-plane.png" alt="" class="pricing-img">
+                <h2 class="pricing-header">Buyer</h2>
+                <ul class="pricing-features">
+                    <li class="pricing-features-item">Add items to your watchlist</li>
+                    <li class="pricing-features-item">Check item location with Google Map</li>
+                </ul>
+                <a (click)="routeToRegister('BUYER')" class="pricing-button is-featured">Register</a>
+            </div>
 
-  <form (ngSubmit)="register()" #f="ngForm">
+            <div class="pricing-plan">
+                <img src="https://s28.postimg.cc/ju5bnc3x9/plane.png" alt="" class="pricing-img">
+                <h2 class="pricing-header">Seller</h2>
+                <ul class="pricing-features">
+                    <li class="pricing-features-item">List/Post items for selling</li>
+                    <li class="pricing-features-item">Mange all your listings</li>
+                </ul>
+                <a (click)="routeToRegister('SELLER')" class="pricing-button is-featured">Register</a>
+            </div>
 
-    <input placeholder="username"
-           name="username"
-           type="text"
-           class="form-control"
-           ngModel
-           required
-           #username="ngModel"/>
+            <div class="pricing-plan">
+                <img src="https://s21.postimg.cc/tpm0cge4n/space-ship.png" alt="" class="pricing-img">
+                <h2 class="pricing-header">Admin</h2>
+                <ul class="pricing-features">
+                    <li class="pricing-features-item">Mange users with all operations</li>
+                    <li class="pricing-features-item">Mange item listings with all operations</li>
+                </ul>
+                <a (click)="routeToRegister('ADMIN')" class="pricing-button is-featured">Register</a>
+            </div>
 
-    <input placeholder="password"
-           name="password"
-           type="password"
-           class="form-control"
-           ngModel
-           required
-           #password="ngModel"/>
-
-    <input placeholder="verify password"
-           name="verifyPassword"
-           type="password"
-           class="form-control"
-           ngModel
-           required
-           #verifyPassword="ngModel"/>
-
-    <span class="help-block" *ngIf="verifyPassword.value && password.value !== verifyPassword.value">
-        Please enter same password!
-    </span>
-
-    <button class="btn btn-primary btn-block"
-            type="submit"
-            [disabled]="!f.valid">
-      Register
-    </button>
-
-    <button class="btn btn-danger btn-block"
-            routerLink="/login">
-      Cancel
-    </button>
-
-  </form>
-
+        </div>
+    </div>
 </div>

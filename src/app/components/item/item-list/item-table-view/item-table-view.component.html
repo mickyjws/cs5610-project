@@ -1,0 +1,96 @@
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/user/dashboard">Dashboard</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/user"><i class="fa fa-fw fa-user"></i> Profile</a></li>
+                <li><a (click)="logout()"><i class="fa fa-fw fa-power-off"></i> Log Out</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="/user/dashboard"><i class="fa fa-fw fa-home"></i> All Item Listings</a>
+                    </li>
+
+                    <li class="active">
+                        <a href="/user/item-table"><i class="fa fa-fw fa-table"></i> Manage All Items</a>
+                    </li>
+
+                    <li>
+                        <a href="/user/item/new"><i class="fa fa-fw fa-edit"></i> Add an Item</a>
+                    </li>
+
+                    <li></li>
+
+                    <li>
+                        <a href="/user/user-table"><i class="fa fa-fw fa-users"></i> Manage All Users</a>
+                    </li>
+
+                    <li>
+                        <a href="/register"><i class="fa fa-fw fa-user-plus"></i> Add a User</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
+    <div id="page-wrapper">
+
+        <div class="container">
+            <!--<app-item-gallery-view></app-item-gallery-view>-->
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Manage All Items</h3>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Seller</th>
+                    <th scope="col">Item name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Is_New</th>
+                    <th scope="col">Item price</th>
+                    <th scope="col">Date published</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of items">
+                    <th scope="col">{{item._seller?.username}}</th>
+                    <th scope="col">{{item?.name}}</th>
+                    <th scope="col">{{item?.category}}</th>
+                    <th scope="col">{{item?.is_new}}</th>
+                    <th scope="col">$ {{item?.price}}</th>
+                    <th scope="col">{{item?.dateCreated}}</th>
+                    <th scope="col"><span class="fa fa-pencil fa-fw fa-lg text-info"
+                                          routerLink="/user/item/{{item?._id}}"></span></th>
+                    <th scope="col"><span class="fa fa-ban fa-fw fa-lg text-danger"
+                                          (click)="deleteItem(item?._id)"></span></th>
+                </tr>
+                </tbody>
+            </table>
+
+            <hr>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->

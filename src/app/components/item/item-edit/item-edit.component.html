@@ -1,0 +1,130 @@
+<div class="container">
+
+    <form (ngSubmit)="updateItem()" #f="ngForm">
+        <div *ngIf="errorFlag"
+             class="alert alert-danger">
+            {{errorMsg}}
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold" for="name">Item Name</label>
+            <input placeholder="name"
+                   type="text"
+                   id="name"
+                   name="name"
+                   ngModel
+                   required
+                   [(ngModel)]="name"
+                   #itemname="ngModel"
+                   class="form-control"/>
+            <span class="help-block" *ngIf="!itemname.valid && itemname.touched">
+          Please enter a name for your item.
+        </span>
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold">Item Category</label>
+            <select name="category"
+                    class="form-control"
+                    ngModel
+                    required
+                    [(ngModel)]="category"
+                    #itemcategory="ngModel">
+                <option value="">Choose item category</option>
+                <option value="FURNITURE">Furniture</option>
+                <option value="TEXTBOOK">Textbook</option>
+                <option value="OTHERS">Others</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold" for="price">Price</label>
+            <input placeholder="10.00"
+                   type="text"
+                   id="price"
+                   name="price"
+                   ngModel
+                   required
+                   [(ngModel)]="price"
+                   #itemprice="ngModel"
+                   class="form-control"/>
+            <span class="help-block" *ngIf="!itemprice.valid && itemprice.touched">
+          Please enter a price for your item.
+        </span>
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold">Condition</label>
+            <input type="radio" name="is_new" [value]="true" [(ngModel)]="is_new"> New
+            <input type="radio" name="is_new" [value]="false" [(ngModel)]="is_new"> Used
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold" for="title">Title</label>
+            <input placeholder="title"
+                   type="text"
+                   id="title"
+                   name="title"
+                   ngModel
+                   required
+                   [(ngModel)]="title"
+                   #itemtitle="ngModel"
+                   class="form-control"/>
+            <span class="help-block" *ngIf="!itemtitle.valid && itemtitle.touched">
+          Please enter a title for your item.
+        </span>
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold" for="description">Description</label>
+            <textarea placeholder="description"
+                      rows="5"
+                      id="description"
+                      name="description"
+                      class="form-control"
+                      ngModel
+                      required
+                      [(ngModel)]="description"
+                      #itemdescription="ngModel"></textarea>
+            <span class="help-block" *ngIf="!itemdescription.valid && itemdescription.touched">
+          Please enter a description.
+        </span>
+        </div>
+
+
+        <div class="form-group">
+            <label for="url">URL</label>
+            <input placeholder="url"
+                   type="text"
+                   id="url"
+                   name="url"
+                   ngModel
+                   [(ngModel)]="url"
+                   #itemurl="ngModel"
+                   class="form-control"/>
+            <span class="help-block" *ngIf="!itemurl.valid && itemurl.touched">
+        Please enter the url for your item.
+        </span>
+        </div>
+
+        <form ngNoForm action="{{baseUrl}}/api/upload" method="post" enctype="multipart/form-data">
+            <input name="myFile" type="file" class="form-control"/>
+            <input name="userId" value="{{userId}}" style="display: none"/>
+            <input name="itemId" value="{{itemId}}" style="display: none"/>
+            <button type="submit" class="btn btn-block btn-primary btn-lg">Upload Image</button>
+        </form>
+
+        <div class="form-group">
+            <button class="btn btn-lg btn-success btn-block" type="submit">Update Item/Complete</button>
+        </div>
+        <!--</div>-->
+
+        <div class="form-group">
+            <button (click)='deleteItem()' class="btn btn-lg btn-danger btn-block">Delete</button>
+        </div>
+
+    </form>
+
+    <!--</div>-->
+</div><!-- /container -->
+

@@ -4,9 +4,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
-  baseUrl: 'http://localhost:3100',
-  FACEBOOK_CLIENT_ID: 'abc',
-  FACEBOOK_CLIENT_SECRET: 'abc',
-  FACEBOOK_CALLBACK_URL: 'abc'
+    production: false,
+    baseUrl: 'http://localhost:3100'
 };

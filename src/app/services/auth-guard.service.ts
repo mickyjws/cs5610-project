@@ -6,10 +6,10 @@ import {UserService} from './user.service.client';
 
 export class AuthGuard implements CanActivate {
 
-  constructor(private userService: UserService, private router: Router) {
-  }
+    constructor(private userService: UserService, private router: Router) {
+    }
 
-  canActivate() {
-    return this.userService.loggedIn();
-  }
+    canActivate() {
+        return this.userService.loggedIn();
+    }
 }

@@ -1,36 +1,45 @@
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 import {LoginComponent} from './components/user/login/login.component';
 import {RegisterComponent} from './components/user/register/register.component';
 import {ProfileComponent} from './components/user/profile/profile.component';
-import {WebsiteListComponent} from './components/website/website-list/website-list.component';
-import {WebsiteNewComponent} from './components/website/website-new/website-new.component';
-import {WebsiteEditComponent} from './components/website/website-edit/website-edit.component';
-import {PageListComponent} from './components/page/page-list/page-list.component';
-import {PageNewComponent} from './components/page/page-new/page-new.component';
-import {PageEditComponent} from './components/page/page-edit/page-edit.component';
-import {WidgetListComponent} from './components/widget/widget-list/widget-list.component';
-import {WidgetChooserComponent} from './components/widget/widget-chooser/widget-chooser.component';
-import {WidgetEditComponent} from './components/widget/widget-edit/widget-edit.component';
-import {FlickrImageSearchComponent} from './components/widget/widget-edit/widget-image/flickr-image-search/flickr-image-search.component';
 import {AuthGuard} from './services/auth-guard.service';
+import {ItemNewComponent} from './components/item/item-new/item-new.component';
+import {ItemEditComponent} from './components/item/item-edit/item-edit.component';
+import {ItemGalleryViewComponent} from './components/item/item-list/item-gallery-view/item-gallery-view.component';
+import {ItemListViewComponent} from './components/item/item-list/item-list-view/item-list-view.component';
+import {RegisterAdminComponent} from './components/user/register/register-admin/register-admin.component';
+import {RegisterBuyerComponent} from './components/user/register/register-buyer/register-buyer.component';
+import {RegisterSellerComponent} from './components/user/register/register-seller/register-seller.component';
+import {ItemTableViewComponent} from './components/item/item-list/item-table-view/item-table-view.component';
+import {ItemDetailLoggedinComponent} from './components/item/item-detail/item-detail-loggedin/item-detail-loggedin.component';
+import {ItemDetailGuestComponent} from './components/item/item-detail/item-detail-guest/item-detail-guest.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {UserTableViewComponent} from './components/user/user-list/user-table-view/user-table-view.component';
+import {HomeGuestComponent} from './components/home/home-guest/home-guest.component';
+import {HomeLoggedinComponent} from './components/home/home-loggedin/home-loggedin.component';
+import {ItemWatchlistComponent} from './components/item/item-list/item-watchlist/item-watchlist.component';
 
 const APP_ROUTES: Routes = [
-  {path: '', component: LoginComponent},
-  {path: 'default', component: LoginComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'user', component: ProfileComponent, canActivate: [AuthGuard]},
-  {path: 'user/website', component: WebsiteListComponent, canActivate: [AuthGuard]},
-  {path: 'user/website/new', component: WebsiteNewComponent, canActivate: [AuthGuard]},
-  {path: 'user/website/:wid', component: WebsiteEditComponent, canActivate: [AuthGuard]},
-  {path: 'user/website/:wid/page', component: PageListComponent, canActivate: [AuthGuard]},
-  {path: 'user/website/:wid/page/new', component: PageNewComponent, canActivate: [AuthGuard]},
-  {path: 'user/website/:wid/page/:pid', component: PageEditComponent, canActivate: [AuthGuard]},
-  {path: 'user/website/:wid/page/:pid/widget', component: WidgetListComponent, canActivate: [AuthGuard]},
-  {path: 'user/website/:wid/page/:pid/widget/new', component: WidgetChooserComponent, canActivate: [AuthGuard]},
-  {path: 'user/website/:wid/page/:pid/widget/:wgid', component: WidgetEditComponent, canActivate: [AuthGuard]},
-  {path: 'user/website/:wid/page/:pid/widget/:wgid/flickr', component: FlickrImageSearchComponent, canActivate: [AuthGuard]},
+    {path: '', component: HomeGuestComponent},
+    {path: 'home', component: HomeLoggedinComponent, canActivate: [AuthGuard]},
+    {path: 'default', component: LoginComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'register', component: RegisterComponent},
+    {path: 'register/admin', component: RegisterAdminComponent},
+    {path: 'register/buyer', component: RegisterBuyerComponent},
+    {path: 'register/seller', component: RegisterSellerComponent},
+    {path: 'user', component: ProfileComponent, canActivate: [AuthGuard]},
+    {path: 'user/item/new', component: ItemNewComponent, canActivate: [AuthGuard]},
+    {path: 'user/item/:itemId', component: ItemEditComponent, canActivate: [AuthGuard]},
+    {path: 'item/:itemId/detail', component: ItemDetailGuestComponent},
+    {path: 'user/item/:itemId/detail', component: ItemDetailLoggedinComponent, canActivate: [AuthGuard]},
+    {path: 'gallery', component: ItemGalleryViewComponent},
+    {path: 'user/item-table', component: ItemTableViewComponent, canActivate: [AuthGuard]},
+    {path: 'user/item-list', component: ItemListViewComponent, canActivate: [AuthGuard]},
+    {path: 'user/item-watchlist', component: ItemWatchlistComponent, canActivate: [AuthGuard]},
+    {path: 'user/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+    {path: 'user/user-table', component: UserTableViewComponent, canActivate: [AuthGuard]},
 ];
 
 // Export the routes as module providers

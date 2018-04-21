@@ -1,0 +1,111 @@
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.hero-spacer {
+    margin-top: 10px;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+header.cover {
+    position: relative;
+    /*background-color: #343a40;*/
+    /*background: url(https://49lg1r5qit613g3e7irib0xf-wpengine.netdna-ssl.com/wp-content/uploads/2017/09/seattle-hero.jpg) no-repeat center center;*/
+    background: url(https://static.wixstatic.com/media/0043f4_02b9ccc34ed04397899771b785840071~mv2.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*padding-top: 8rem;*/
+    /*padding-bottom: 8rem*/
+}
+
+.jumbotron {
+    min-height: 600px;
+}
+
+/*.ratings {*/
+/*padding-right: 10px;*/
+/*padding-left: 10px;*/
+/*color: #d17581;*/
+/*}*/
+
+/*.thumbnail {*/
+/*padding: 0;*/
+/*height: 442px;*/
+/*}*/
+
+/*.thumbnail .caption-full {*/
+/*padding: 9px;*/
+/*color: #333;*/
+/*}*/
+
+/*.caption {*/
+/*height: 193px;*/
+/*overflow: hidden;*/
+/*}*/
+
+/*.caption h3 {*/
+/*white-space: nowrap;*/
+/*}*/
+
+.thumbnail img {
+    width: 100%;
+    height: 250px;
+}
+
+.thumbnail {
+    padding: 0;
+    height: 480px;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+.caption {
+    height: 200px;
+    overflow: hidden;
+}
+
+.caption h3 {
+    white-space: nowrap;
+    margin-top: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 260px;
+}
+
+.caption p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.icons .user {
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.icons .watcher {
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+

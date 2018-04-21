@@ -1,0 +1,147 @@
+<div class="container">
+
+    <!--<a class="text-white col-auto"></a>-->
+    <!--<div class="col-1 col-md-3 ml-0 mr-0 d-none d-md-block container-fluid vertical-divider-right sidebar-padding">-->
+    <!--<app-website-list></app-website-list>-->
+    <!--</div>-->
+
+    <!--<div class="col-10 col-md-8 mr-10 container-fluid zero-padding position-left">-->
+    <form (ngSubmit)="create()" #f="ngForm">
+        <div *ngIf="errorFlag"
+             class="alert alert-danger">
+            {{errorMsg}}
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold" for="name">Item Name</label>
+            <input placeholder="name"
+                   type="text"
+                   id="name"
+                   name="name"
+                   ngModel
+                   required
+                   #name="ngModel"
+                   class="form-control"/>
+            <span class="help-block" *ngIf="!name.valid && name.touched">
+          Please enter a name for your item.
+        </span>
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold">Item Category</label>
+            <select name="category"
+                    class="form-control"
+                    ngModel
+                    required
+                    #category="ngModel">
+                <option value="">Choose item category</option>
+                <option value="FURNITURE" selected>Furniture</option>
+                <option value="TEXTBOOK">Textbook</option>
+                <option value="OTHERS">Others</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold" for="price">Price</label>
+            <input placeholder="10.00"
+                   type="text"
+                   id="price"
+                   name="price"
+                   ngModel
+                   required
+                   #price="ngModel"
+                   class="form-control"/>
+            <span class="help-block" *ngIf="!price.valid && price.touched">
+          Please enter a price for your item.
+        </span>
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold">Condition</label>
+            <!--<input type="radio"-->
+            <!--name="is_new"-->
+            <!--checked="checked"-->
+            <!--ngModel-->
+            <!--required-->
+            <!--#is_new="ngModel"-->
+            <!--class="form-control"/>-->
+
+            <!--<label class="text-bold">Used</label>-->
+            <!--<input type="radio"-->
+            <!--name="is_new"-->
+            <!--ngModel-->
+            <!--required-->
+            <!--#is_new="ngModel"-->
+            <!--class="form-control"/>-->
+            <!--<label>New-->
+            <input type="radio" checked="checked" [value]="true" name="is_new"> New
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+            <!--<label>Used-->
+            <input type="radio" [value]="false" name="is_new"> Used
+            <!--<span class="checkmark"></span>-->
+            <!--</label>-->
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold" for="title">Title</label>
+            <input placeholder="title"
+                   type="text"
+                   id="title"
+                   name="title"
+                   ngModel
+                   required
+                   #title="ngModel"
+                   class="form-control"/>
+            <span class="help-block" *ngIf="!title.valid && title.touched">
+          Please enter a title for your item.
+        </span>
+        </div>
+
+        <div class="form-group">
+            <label class="text-bold" for="description">Description</label>
+            <textarea placeholder="description"
+                      rows="5"
+                      id="description"
+                      name="description"
+                      class="form-control"
+                      ngModel
+                      required
+                      #description="ngModel"></textarea>
+            <span class="help-block" *ngIf="!description.valid && description.touched">
+          Please enter a description.
+        </span>
+        </div>
+
+
+        <!--<div class="form-group">-->
+        <!--<label for="url">URL</label>-->
+        <!--<input placeholder="url"-->
+        <!--type="text"-->
+        <!--id="url"-->
+        <!--name="url"-->
+        <!--ngModel-->
+        <!--required-->
+        <!--#url="ngModel"-->
+        <!--class="form-control"/>-->
+        <!--<span class="help-block" *ngIf="!url.valid && url.touched">-->
+        <!--Please enter the url for your item.-->
+        <!--</span>-->
+
+        <!--<form ngNoForm action="{{baseUrl}}/api/upload" method="post" enctype="multipart/form-data">-->
+        <!--<input name="myFile" type="file" class="form-control"/>-->
+        <!--<input name="userId" value="{{userId}}" style="display: none"/>-->
+        <!--<button type="submit" class="btn btn-block btn-primary">Upload Image</button>-->
+        <!--</form>-->
+
+        <button class="btn btn-success btn-block"
+                type="submit">
+            Create Item
+        </button>
+        <button class="btn btn-primary btn-block" routerLink="/user/dashboard"> Back to Dashboard</button>
+        <!--</div>-->
+
+    </form>
+
+    <!--</div>-->
+</div><!-- /container -->

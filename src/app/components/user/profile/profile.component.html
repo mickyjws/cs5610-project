@@ -1,71 +1,45 @@
-<nav class="navbar navbar-expand-lg bg-primary navbar-fixed-top">
-  <div class="container-fluid">
-    <span class="navbar-brand">Profile</span>
-    <a class="navbar-text navbar-link pull-right white-icon"
-       (click)="update()">
-      <span class="glyphicon glyphicon-ok"></span>
-    </a>
-  </div>
-</nav>
+<div class="background">
+    <div class="container">
+        <div class="panel pricing-table-1">
+
+            <form (ngSubmit)="update(user)" #f="ngForm">
+
+                <div *ngIf="errorFlag"
+                     class="alert alert-danger">
+                    {{errorMsg}}
+                </div>
+
+                <div [ngSwitch]="type">
+
+                    <div *ngSwitchCase="'ADMIN'">
+                        <app-profile-admin [user]='user'></app-profile-admin>
+                    </div>
+
+                    <div *ngSwitchCase="'BUYER'">
+                        <app-profile-buyer [user]='user'></app-profile-buyer>
+                    </div>
+
+                    <div *ngSwitchCase="'SELLER'">
+                        <app-profile-seller [user]='user'></app-profile-seller>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Update Profile</button>
+                    <!--<button (click)="logout()" class="btn btn-lg btn-warning btn-block">Logout</button>-->
+                    <button routerLink="/user/dashboard" class="btn btn-lg btn-warning btn-block">Back To Dashboard
+                    </button>
+                    <!--<button (click)='delete()' class="btn btn-lg btn-danger btn-block">Delete Account</button>-->
+                </div>
+                <div class="form-group">
+                    <!--<button type="submit" class="btn btn-lg btn-primary btn-block">Update Profile</button>-->
+                    <!--<button (click)="logout()" class="btn btn-lg btn-danger btn-block">Logout</button>-->
+                    <button (click)='delete()' class="btn btn-lg btn-danger btn-block">Delete Account</button>
+                </div>
 
 
-<div class="container">
-
-  <div *ngIf="errorFlag"
-       class="alert alert-danger">
-    {{errorMsg}}
-  </div>
-
-  <label>Username</label>
-  <input [(ngModel)]="username"
-         type="text"
-         class="form-control"/>
-
-  <label>Password</label>
-  <input [(ngModel)]="password"
-         type="password"
-         class="form-control"/>
-
-  <label>First Name</label>
-  <input [(ngModel)]="firstName"
-         type="text"
-         class="form-control"
-         placeholder="First Name"/>
-
-  <label>Last Name</label>
-  <input [(ngModel)]="lastName"
-         type="text"
-         class="form-control"
-         placeholder="Last Name"/>
-
-  <label>Email</label>
-  <input [(ngModel)]="email"
-         type="text"
-         class="form-control"
-         placeholder="Email"/>
-
-  <button class="btn btn-primary btn-block"
-          type="submit"
-          routerLink="website">
-    Websites
-  </button>
-
-  <button class="btn btn-danger btn-block"
-          type="submit"
-          (click)="logout()">
-    Logout
-  </button>
-
-  <button class="btn btn-danger btn-block"
-          type="submit"
-          (click)="delete()">
-    Delete
-  </button>
-
-  <nav class="navbar navbar-expand-lg bg-primary navbar-fixed-bottom">
-    <div class="navbar-text pull-right icon-right">
-      <span class="glyphicon glyphicon-user" routerLink="/user"></span>
+            </form>
+        </div>
     </div>
-  </nav>
-
 </div>

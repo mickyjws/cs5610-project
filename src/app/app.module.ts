@@ -2,7 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {routing} from './app.routing';
-import {QuillEditorModule} from 'ngx-quill-editor';
 
 import {AppComponent} from './app.component';
 import {LoginComponent} from './components/user/login/login.component';

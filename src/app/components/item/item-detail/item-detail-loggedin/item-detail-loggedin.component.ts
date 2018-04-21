@@ -3,8 +3,8 @@ import {ItemService} from '../../../../services/item.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SharedService} from '../../../../services/shared.service';
 import {UserService} from '../../../../services/user.service.client';
-import {} from '@types/googlemaps';
-declare var google: any;
+// import {} from '@types/googlemaps';
+// declare var google: any;
 
 @Component({
     selector: 'app-item-detail-loggedin',
@@ -21,7 +21,7 @@ export class ItemDetailLoggedinComponent implements OnInit {
     condition: String;
     is_buyer: Boolean;
     is_watched: Boolean;
-    googleMap: google.maps.Map;
+    // googleMap: google.maps.Map;
 
     constructor(private sharedService: SharedService,
                 private userService: UserService,
@@ -49,31 +49,31 @@ export class ItemDetailLoggedinComponent implements OnInit {
         );
 
         // Google Map
-        this.loadGoogleMap();
+        // this.loadGoogleMap();
 
 
     }
 
-    loadGoogleMap() {
-        const geocoder = new google.maps.Geocoder();
-        const address = this.user.address + ', ' + this.user.city + ',' + this.user.state + ' ' + this.user.zip;
-
-        geocoder.geocode({'address': address}, function (results, status) {
-            if (status === 'OK') {
-                const mapOption = {
-                    center: results[0].geometry.location,
-                    zoom: 12,
-                };
-                this.googleMap = new google.maps.Map(document.getElementById('map'), mapOption);
-                const marker = new google.maps.Marker({
-                    map: this.googleMap,
-                    position: results[0].geometry.location
-                });
-            } else {
-                console.log('Geocode was not successful for the following reason: ' + status);
-            }
-        });
-    }
+    // loadGoogleMap() {
+    //     const geocoder = new google.maps.Geocoder();
+    //     const address = this.user.address + ', ' + this.user.city + ',' + this.user.state + ' ' + this.user.zip;
+    //
+    //     geocoder.geocode({'address': address}, function (results, status) {
+    //         if (status === 'OK') {
+    //             const mapOption = {
+    //                 center: results[0].geometry.location,
+    //                 zoom: 12,
+    //             };
+    //             this.googleMap = new google.maps.Map(document.getElementById('map'), mapOption);
+    //             const marker = new google.maps.Marker({
+    //                 map: this.googleMap,
+    //                 position: results[0].geometry.location
+    //             });
+    //         } else {
+    //             console.log('Geocode was not successful for the following reason: ' + status);
+    //         }
+    //     });
+    // }
 
     addToWatchList() {
         this.userService.addItemToWatchList(this.userId, this.itemId).subscribe(

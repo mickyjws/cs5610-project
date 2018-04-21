@@ -71,8 +71,7 @@ import {ItemWatchlistComponent} from './components/item/item-list/item-watchlist
         BrowserModule,
         routing,
         FormsModule,
-        HttpModule,
-        QuillEditorModule
+        HttpModule
     ],
     providers: [UserService, SharedService, AuthGuard, ItemService],
     bootstrap: [AppComponent]

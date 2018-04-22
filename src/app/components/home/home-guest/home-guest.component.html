@@ -47,11 +47,11 @@
                     <img [src]="item?.url">
                     <div class="caption">
                         <h3 class="pull-right">$ {{item?.price}}</h3>
-                        <h3><a href="{{link}}/{{item?._id}}/detail">{{item?.title}}</a>
+                        <h3><a href="/item/{{item?._id}}/detail">{{item?.title}}</a>
                         </h3>
                         <!--<p class="text-bold">{{item.name}}</p>-->
                         <p>{{item?.description}}</p>
-                        <a href="{{link}}/{{item?._id}}/detail" class="btn btn-primary">View Details
+                        <a href="/item/{{item?._id}}/detail" class="btn btn-primary">View Details
                             <span class="fa fa-caret-right fa-fw"></span>
                         </a>
                     </div>

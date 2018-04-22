@@ -20,6 +20,9 @@ export class ItemDetailLoggedinComponent implements OnInit {
     user: any;
     seller: any;
 
+    itemPostedDate: any;
+    userCreatedDate: any;
+
     condition: String;
     is_buyer: Boolean;
     is_watched: Boolean;
@@ -45,6 +48,15 @@ export class ItemDetailLoggedinComponent implements OnInit {
                         this.item = item;
                         this.seller = this.item._seller;
                         this.is_watched = this.user.watchList.includes(this.itemId);
+                        this.itemPostedDate = new Date(this.item.dateCreated).toUTCString();
+                        this.userCreatedDate = new Date(this.seller.dateCreated).toDateString();
+
+                        if (item.is_new) {
+                            this.condition = 'New';
+                        } else {
+                            this.condition = 'Used';
+                        }
+
                         this.loadGoogleMap();
                     }
                 );

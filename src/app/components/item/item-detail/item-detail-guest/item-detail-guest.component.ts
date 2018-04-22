@@ -15,6 +15,8 @@ export class ItemDetailGuestComponent implements OnInit {
     seller: any;
 
     condition: String;
+    itemPostedDate: any;
+    userCreatedDate: any;
 
     constructor(private itemService: ItemService,
                 private activatedRoute: ActivatedRoute,
@@ -29,6 +31,8 @@ export class ItemDetailGuestComponent implements OnInit {
                     (item: any) => {
                         this.item = item;
                         this.seller = this.item._seller;
+                        this.itemPostedDate = new Date(this.item.dateCreated).toUTCString();
+                        this.userCreatedDate = new Date(this.seller.dateCreated).toDateString();
 
                         if (item.is_new) {
                             this.condition = 'New';

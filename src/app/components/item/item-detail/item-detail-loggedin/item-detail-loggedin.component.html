@@ -39,7 +39,7 @@
 
             <!-- Date/Time -->
             <p>
-                <span class="glyphicon glyphicon-time"></span> Posted on {{item?.dateCreated}}
+                <span class="glyphicon glyphicon-time"></span> Posted on {{itemPostedDate}}
                 <span *ngIf="is_buyer && is_watched" class="glyphicon glyphicon-heart watcher-red"
                       (click)="removeFromWatchList()"><span class="font"> {{item?.watcher_count}}</span></span>
                 <span *ngIf="is_buyer && !is_watched" class="glyphicon glyphicon-heart watcher-grey"
@@ -87,7 +87,7 @@
                         </li>
                         <li>Contact email: <a href="/user/item/{{itemId}}/detail">{{seller?.email}}</a>
                         </li>
-                        <li>Date registered: <a href="/user/item/{{itemId}}/detail">{{seller?.dateCreated}}</a>
+                        <li>Date registered: <a href="/user/item/{{itemId}}/detail">{{userCreatedDate}}</a>
                         </li>
                     </ul>
                 </div>

@@ -31,7 +31,7 @@
 
             <!-- Author -->
             <p class="lead">
-                by <a href="/item/{{item._id}}">{{item?._seller.username}}</a>
+                by <a href="/item/{{item?._id}}">{{item?._seller.username}}</a>
                 <span class="pull-right">$ {{item?.price}}</span>
             </p>
 
@@ -39,7 +39,7 @@
 
             <!-- Date/Time -->
             <p>
-                <span class="glyphicon glyphicon-time"></span> Posted on {{item?.dateCreated}}
+                <span class="glyphicon glyphicon-time"></span> Posted on {{itemPostedDate}}
                 <span class="glyphicon glyphicon-heart watcher"><span
                         class="font"> {{item?.watcher_count}}</span></span>
                 <span class="glyphicon glyphicon-list-alt category"><span
@@ -103,7 +103,7 @@
                         </li>
                         <li>Contact email: <a href="/item/{{itemId}}/detail">{{seller?.email}}</a>
                         </li>
-                        <li>Date registered: <a href="/item/{{itemId}}/detail">{{seller?.dateCreated}}</a>
+                        <li>Date registered: <a href="/item/{{itemId}}/detail">{{userCreatedDate}}</a>
                         </li>
                     </ul>
                 </div>

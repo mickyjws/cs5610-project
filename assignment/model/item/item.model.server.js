@@ -35,7 +35,6 @@ function findItemById(itemId) {
 
 function findAllSellingItemsForUser(userId) {
     return ItemModel.find({_seller: userId}).sort({dateCreated: -1});
-    ;
 }
 
 function findItemWatcher(itemId) {

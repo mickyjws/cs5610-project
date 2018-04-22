@@ -124,7 +124,7 @@ export class ItemEditComponent implements OnInit {
         this.itemService.deleteItem(this.itemId)
             .subscribe(
                 (res: any) => {
-                    this.router.navigate(['/user', 'item']);
+                    this.router.navigate(['/user', 'dashboard']);
                 }
             );
     }

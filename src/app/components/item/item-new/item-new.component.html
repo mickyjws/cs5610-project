@@ -58,30 +58,11 @@
 
         <div class="form-group">
             <label class="text-bold">Condition</label>
-            <!--<input type="radio"-->
-            <!--name="is_new"-->
-            <!--checked="checked"-->
-            <!--ngModel-->
-            <!--required-->
-            <!--#is_new="ngModel"-->
-            <!--class="form-control"/>-->
-
-            <!--<label class="text-bold">Used</label>-->
-            <!--<input type="radio"-->
-            <!--name="is_new"-->
-            <!--ngModel-->
-            <!--required-->
-            <!--#is_new="ngModel"-->
-            <!--class="form-control"/>-->
-            <!--<label>New-->
-            <input type="radio" checked="checked" [value]="true" name="is_new"> New
-            <!--<span class="checkmark"></span>-->
-            <!--</label>-->
-            <!--<label>Used-->
-            <input type="radio" [value]="false" name="is_new"> Used
-            <!--<span class="checkmark"></span>-->
-            <!--</label>-->
+            <input type="radio" value="true" name="is_new" ngModel required> New
+            <input type="radio" value="false" name="is_new" ngModel required> Used
         </div>
+
+        {{is_new}}
 
         <div class="form-group">
             <label class="text-bold" for="title">Title</label>
@@ -134,11 +115,10 @@
         <!--<button type="submit" class="btn btn-block btn-primary">Upload Image</button>-->
         <!--</form>-->
 
-        <button class="btn btn-success btn-block"
-                type="submit">
-            Create Item
+        <button class="btn btn-lg btn-success btn-block"type="submit">Create Item
         </button>
-        <button class="btn btn-primary btn-block" routerLink="/user/dashboard"> Back to Dashboard</button>
+        <button routerLink="/user/dashboard" class="btn btn-lg btn-warning btn-block">Back To Dashboard
+        </button>
         <!--</div>-->
 
     </form>

@@ -1,4 +1,8 @@
-input.form-control, textarea.form-control {
+input.form-control, textarea.form-control, input-group.input-group-btn {
+    margin-bottom: 10px;
+}
+
+.btn-margin {
     margin-bottom: 10px;
 }
 
@@ -18,3 +22,6 @@ input.form-control, textarea.form-control {
 .btn-block {
     margin-bottom: 5px;
 }
+/*.upload .form-control {*/
+    /*width: 80%*/
+/*}*/

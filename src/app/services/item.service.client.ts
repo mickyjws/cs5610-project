@@ -21,7 +21,7 @@ export class ItemService {
             price: item.price,
             title: item.title,
             description: item.description,
-            isNew: item.isNew
+            is_new: item.is_new
         };
         return this._http.post(this.baseUrl + '/api/user/' + userId + '/item', body)
             .map(

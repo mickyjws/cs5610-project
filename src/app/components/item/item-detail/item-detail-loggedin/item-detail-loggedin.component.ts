@@ -3,6 +3,7 @@ import {ItemService} from '../../../../services/item.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SharedService} from '../../../../services/shared.service';
 import {UserService} from '../../../../services/user.service.client';
+
 import {} from '@types/googlemaps';
 declare var google: any;
 
@@ -17,6 +18,7 @@ export class ItemDetailLoggedinComponent implements OnInit {
     userId: String;
     item: any;
     user: any;
+    seller: any;
 
     condition: String;
     is_buyer: Boolean;
@@ -41,6 +43,7 @@ export class ItemDetailLoggedinComponent implements OnInit {
                 this.itemService.findItemById(this.itemId).subscribe(
                     (item: any) => {
                         this.item = item;
+                        this.seller = this.item._seller;
                     }
                 );
 
@@ -56,7 +59,8 @@ export class ItemDetailLoggedinComponent implements OnInit {
 
     loadGoogleMap() {
         const geocoder = new google.maps.Geocoder();
-        const address = this.user.address + ', ' + this.user.city + ',' + this.user.state + ' ' + this.user.zip;
+        const address = this.seller.address.trim() + ', ' + this.user.city.trim() + ', '
+            + this.user.state.trim() + ' ' + this.user.zip.trim();
 
         geocoder.geocode({'address': address}, function (results, status) {
             if (status === 'OK') {
@@ -96,7 +100,7 @@ export class ItemDetailLoggedinComponent implements OnInit {
     logout() {
         this.userService.logout()
             .subscribe(
-                (data: any) => this.router.navigate(['/home'])
+                (data: any) => this.router.navigate(['/'])
             );
     }
 

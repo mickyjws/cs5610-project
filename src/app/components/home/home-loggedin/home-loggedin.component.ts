@@ -36,7 +36,7 @@ export class HomeLoggedinComponent implements OnInit {
     logout() {
         this.userService.logout()
             .subscribe(
-                (data: any) => this.router.navigate(['/home'])
+                (data: any) => this.router.navigate(['/'])
             );
     }
 

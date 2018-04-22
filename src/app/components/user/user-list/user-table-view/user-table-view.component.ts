@@ -30,4 +30,11 @@ export class UserTableViewComponent implements OnInit {
                 }
             );
     }
+
+    logout() {
+        this.userService.logout()
+            .subscribe(
+                (data: any) => this.router.navigate(['/'])
+            );
+    }
 }

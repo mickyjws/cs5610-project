@@ -34,7 +34,7 @@ module.exports = function (app) {
         };
 
         itemModel.findItemById(itemId).then(function (item) {
-            item.url = '/assets/uploads/' + filename;
+            item.url = 'assets/uploads/' + filename;
             itemModel.updateItem(itemId, item).then(function (status) {
                 var callbackUrl = "/user/item/" + itemId;
                 res.redirect(callbackUrl);

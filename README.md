@@ -2,8 +2,7 @@
 Repository for Web Development Team Project
 CS5610 Web Development 2018 Spring
 
-Member: Hao Jiang
-Member: Michelle Jiang
+Member: Hao Jiang, Michelle Jiang
 
 ### Project Links:
 Project Heroku Link: https://cs5610-webdev-hm-project.herokuapp.com

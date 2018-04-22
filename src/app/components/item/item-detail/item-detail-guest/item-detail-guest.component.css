@@ -25,3 +25,6 @@
 .text-bold {
     font-weight: bold;
 }
+.extra-padding {
+    padding-top: 200px;
+}

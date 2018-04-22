@@ -12,6 +12,7 @@ export class ItemDetailGuestComponent implements OnInit {
     itemId: String;
     userId: String;
     item: any;
+    seller: any;
 
     condition: String;
 
@@ -27,6 +28,7 @@ export class ItemDetailGuestComponent implements OnInit {
                 this.itemService.findItemById(this.itemId).subscribe(
                     (item: any) => {
                         this.item = item;
+                        this.seller = this.item._seller;
 
                         if (item.is_new) {
                             this.condition = 'New';

@@ -44,23 +44,17 @@ export class ItemDetailLoggedinComponent implements OnInit {
                     (item: any) => {
                         this.item = item;
                         this.seller = this.item._seller;
+                        this.is_watched = this.user.watchList.includes(this.itemId);
+                        this.loadGoogleMap();
                     }
                 );
-
-                this.is_watched = this.user.watchList.includes(this.itemId);
             }
         );
-
-        // Google Map
-        this.loadGoogleMap();
-
-
     }
 
     loadGoogleMap() {
         const geocoder = new google.maps.Geocoder();
-        const address = this.seller.address.trim() + ', ' + this.user.city.trim() + ', '
-            + this.user.state.trim() + ' ' + this.user.zip.trim();
+        const address = this.seller.address + ', ' + this.seller.city + ', ' + this.seller.state + ' ' + this.seller.zip;
 
         geocoder.geocode({'address': address}, function (results, status) {
             if (status === 'OK') {
